@@ -2,6 +2,7 @@
 [![Build Status](https://github.com/processone/docker-ejabberd/actions/workflows/tests.yml/badge.svg)](https://github.com/processone/docker-ejabberd/actions/workflows/tests.yml)
 
 # docker-ejabberd
+# Modded to run my version of ejabberd
 
 This repository contains a set of container images to run or develop ejabberd:
 
