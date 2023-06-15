@@ -113,8 +113,7 @@ jobs:
           labels: ${{ steps.ecsmeta.outputs.labels }}
           platforms: linux/amd64
           push: true
-          tags: |
-            ${{ steps.ecsmeta.outputs.tags }}
+          tags: ${{ steps.ecsmeta.outputs.tags }}
 
       - name: Run ecs image
         run: |
