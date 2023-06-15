@@ -7,6 +7,7 @@ LABEL maintainer="ProcessOne <contact@process-one.net>" \
 
 # Get ejabberd sources, dependencies, configuration
 RUN git clone https://github.com/bishwos/ejabberd.git
+
 WORKDIR /ejabberd
 COPY vars.config .
 RUN echo '{vsn, "'${VERSION}'.0"}.' >>vars.config
