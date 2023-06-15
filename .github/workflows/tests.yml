@@ -84,20 +84,20 @@ jobs:
         with:
           driver-opts: network=host
 
-#       - name: Build and push mix image
-#         uses: docker/build-push-action@v4
-#         with:
-#           build-args: |
-#             VERSION=${{ steps.gitdescribe.outputs.ver }}
-#           cache-from: type=gha
-#           cache-to: type=gha,mode=max
-#           context: mix
-#           labels: ${{ steps.mixmeta.outputs.labels }}
-#           platforms: linux/amd64
-#           push: true
-#           tags: |
-#             ${{ steps.localreg.outputs.mixtag }}
-#             ${{ steps.mixmeta.outputs.tags }}
+      - name: Build and push mix image
+        uses: docker/build-push-action@v4
+        with:
+          build-args: |
+            VERSION=${{ steps.gitdescribe.outputs.ver }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          context: mix
+          labels: ${{ steps.mixmeta.outputs.labels }}
+          platforms: linux/amd64
+          push: true
+          tags: |
+            ${{ steps.localreg.outputs.mixtag }}
+            ${{ steps.mixmeta.outputs.tags }}
 
       - name: Prepare ecs Dockerfile
         run: sed -i 's|ejabberd/mix|${{ steps.localreg.outputs.mixtag }}|g' ecs/Dockerfile
