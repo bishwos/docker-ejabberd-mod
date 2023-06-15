@@ -114,7 +114,6 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ${{ steps.localreg.outputs.ecstag }}
             ${{ steps.ecsmeta.outputs.tags }}
 
       - name: Run ecs image
